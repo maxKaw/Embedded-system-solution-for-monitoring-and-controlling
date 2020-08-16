@@ -1,5 +1,8 @@
 # Embedded System solution for monitoring and controlling 
 
+University project. Achieved grade 87%.
+
+# Detail of the task
 
 Your team are to prototype an embedded system (hardware and software/firmware) for operation as an environmental monitoring and control system. It must be capable of monitoring any 2 of these 3 variables: 
 - Ambient Humidity (e.g. DHT11/22 sensor) 
@@ -40,6 +43,11 @@ Your group is to produce (design and implement) a prototype embedded system and 
 - Readings must now be stored every 5s in volatile memory. If a connected push-button is held down for ~1s, the system should cycle between output intervals [5s, 10s, 30s, 60s, 2mins, 5mins]. Output is still only required for the latest values for each sensor. Each time the output interval is changed, this should be communicated via a debug string (e.g. “Output interval is now 30s”) to the MCU’s serial/debug port. 
 - Transmit the volatile-stored readings at the regular output interval [though with a minimum interval of 30s – 
 * i.e. at most twice a minute] determined in the previous features to a server for remote storage. 
+- If the building is determined occupied, as per feature D, then the system should sound an audible alert (min
+1s duration) as the table below. The alert can be “snoozed” for 2m by tapping a push button following the
+audible alert. This must only snooze an existing alert: a new/escalated cause should start a new audible
+alert. Alert statuses (including snooze) should be logged as per feature C, and at each status change.
+
 <table style="width:100%">
 <tr>
  <th>System 	status 	== AND..</th><th>occupied 	Audible alert every</th>
@@ -51,6 +59,7 @@ Your group is to produce (design and implement) a prototype embedded system and 
 <td>Red for any sensor</td> 		<td>5s</td> 
 </tr>
 </table>
+
 - Store readings in a plain-text file on an SD/MMC card for local, separable, storage. Each reading should be timestamped with an offset from a given local epoch. You should name/date the files based on an epoch time/datestamp provided when you communicate with the remote server in the previous feature. To minimise flash wear, log files should be written only every 2 minutes. Only once a batch has been verified as stored on the non-volatile card, it can be freed from local volatile memory. 
 - Showcase challenge feature: one additional feature (set) of your choosing that showcases a specific technique or technology outlined in the module. Please discuss your plans with the module leader before you embark on development. Example areas include (but are not limited to) power conservation/energy efficiency, advanced user output/input technologies, inclusion of a real-time clock (RTC). If you are stuck for ideas or would like a benchmark for complexity, an example showcase feature is described below:  
 - Display readings and system status in real time on a directly-driven, text-based display. The display should be updated as frequently as readings are obtained; not as per the output interval. Steps should be taken to eliminate or reduce display flicker. To avoid display overcrowding, your display should have minimum 2 distinct modes – they should cycle based on i) time, or ii) a push-button press. Displaying “alert” details should always take priority when an alert is active or snoozed. 
