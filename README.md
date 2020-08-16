@@ -1,6 +1,6 @@
 # Embedded System solution for monitoring and controlling 
 
-University project. Achieved grade 87%.
+University project of the embedded system is developed in C and C++ languages. Achieved grade 87%.
 
 # Detail of the task
 
@@ -30,7 +30,21 @@ If all sensors indicate values in the green region, this is considered ideal, an
  
 Beyond this, additional features introduce a requirement to display certain formatted data values on an output screen (e.g. an LCD character or OLED pixel display), and produce audio alerts. 
  
-The client has specified that they foresee an Internet of Things (IoT) development pathway, so the system will be able to transmit its status regularly to a server that will facilitate remote monitoring. You can assume the system has access to a WiFi access point (but you are responsible for provisioning it). PHP source code for a simple server endpoint will be provided for testing purposes, though again, you must provision/host this. You are welcome to edit this code and to add functionality (e.g. visualisation / review) as required. 
+The client has specified that they foresee an Internet of Things (IoT) development pathway, so the system will be able to transmit its status regularly to a server that will facilitate remote monitoring. You can assume the system has access to a WiFi access point (but you are responsible for provisioning it). PHP source code for a simple server endpoint will be provided for testing purposes, though again, you must provision/host this. You are welcome to edit this code and to add functionality (e.g. visualisation / review) as required.
+
+# Requirements
+
+The key hardware requirement is that the microcontroller (MCU) hardware is centred on an Arduinocompatible board. This means you can consider the entirety of the Arduino range, though an Uno is likely to be
+acceptable for basic development only. You are also invited to look at the Espressif ESP8266 and ESP32 boards;
+with built-in WiFi and an Arduino core SDK, they can be programmed almost transparently in Arduino IDEcompatible environments (e.g. Sloeber, Visual Micro, PlatformIO).
+The developed and submitted software must be developed primarily using Arduino standard libraries (or closecompatible alternatives in the case of the ESP boards) and C or C++. You may use other third-party
+libraries/drivers but these must be clearly identified in your submission, and clear instructions must be included
+for access to the Software Development Kit (SDK)’s documentation. You will have access to componentry for
+sensing/actuation, though may (at your own cost) include other peripherals, but please ensure you familiarise
+yourself with the physical and software connectivity requirements. Try to assess how much General Purpose
+Input/Output (GPIO) capacity your components will require and how to talk to them! Some environmental
+sensing technology is very expensive; please see the note “SPECIALIST HARDWARE”.
+
 
 # Feature Set
 
@@ -50,7 +64,7 @@ alert. Alert statuses (including snooze) should be logged as per feature C, and 
 
 <table style="width:100%">
 <tr>
- <th>System 	status 	== AND..</th><th>occupied 	Audible alert every</th>
+ <th>System 	status 	== occupied AND..</th><th>Audible alert every</th>
 </tr>
 <tr>
 <td>Amber for any sensor</td> 		<td>30s</td> 
