@@ -1,4 +1,4 @@
-# Embedded System solution for monitoring and controlling 
+# Embedded System solution for monitoring and controlling various sensors/components
 
 University project of the embedded system is developed in C and C++ languages. Achieved grade 87%.
 
